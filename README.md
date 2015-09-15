@@ -1,7 +1,7 @@
-#VPR App Template
-Used to create and push static web applications for hosting on Amazon S3.
+#VPR SoundCloud Podcast App
+Used to create and push SoundCloud-driven podCasts to Amazon S3.
 
-This stack is used by VPR to publish news apps and can be used for anything from building a blog to creating more advanced web applications.
+A variant of the VPR app-template
 
 ## Technology
 - [Flask](http://flask.pocoo.org/): Used for local development

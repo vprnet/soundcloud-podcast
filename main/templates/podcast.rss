@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0"> 
+	<channel>
+		<title>{{ meta.title }}</title>
+		<description>{{ meta.description }}</description>
+		<link>{{ meta.link }}</link>
+		<language>en-us</language>
+		<copyright>Copyright 2007</copyright>
+		<lastBuildDate>{{ pub_date }}</lastBuildDate>
+		<pubDate>{{ pub_date }}</pubDate>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<webMaster>{{ meta.webmaster }}</webMaster>
+		<itunes:author>{{ meta.itunes_author }}</itunes:author>
+		<itunes:subtitle>{{ meta.itunes_subtitle }}</itunes:subtitle>
+		<itunes:summary>{{ meta.itunes_summary }}</itunes:summary>
+		<itunes:owner>
+			   <itunes:name>{{ meta.itunes_owner.name }}</itunes:name>
+			   <itunes:email>{{ meta.itunes_owner.email }}</itunes:email>
+		</itunes:owner>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:image href="{{ meta.itunes_image }}"/>
+{% if meta.itunes_category_1 and meta.itunes_category_2 %}
+		<itunes:category text="{{ meta.itunes_category_1 }}">
+			 <itunes:category text="{{ meta.itunes_category_2 }}"/>
+		</itunes:category>
+{% endif %}
+{% for track in my_tracks %}
+		<item>
+			<title>{{ track.title }}</title>
+			<link>{{ track.permalink_url }}</link>
+			<guid>{{ track.download_url }}</guid>
+			<description>{{ track.description }}</description>
+			<enclosure url="{{ track.download_url }}" length="{{ track.original_content_size }}" type="audio/mpeg"/>
+			<category>Podcasts</category>
+			<pubDate>{{ track.created_at }}</pubDate>
+			<itunes:author>{{ meta.itunes_author }}</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:subtitle>{{ track.title }}</itunes:subtitle>
+			<itunes:summary>{{ track.title }}</itunes:summary>
+			<itunes:duration>{{ track.duration }}</itunes:duration>
+{% if meta.itunes_keywords %}
+			<itunes:keywords>{{ meta.itunes_keywords }}</itunes:keywords>
+{% endif %}
+		</item>
+{% endfor %}
+	</channel>
+</rss>
