@@ -65,6 +65,10 @@ def set_metadata():
         ext = os.path.splitext(filename)[1]
         if not ext:
             ext = '.html'
+    	if filename.split('/')[-1]=='index.html':
+    		content_type = 'text/xml'
+        else:
+        	content_type = mimetypes.types_map[ext]
         web_path = filename.split('build/')[1]
 
         # Set expires for HTML, remove extension if not index
@@ -84,7 +88,7 @@ def set_metadata():
         else:
             f = filename
 
-        k.set_metadata('Content-Type', 'text/xml')
+        k.set_metadata('Content-Type', content_type)
         etag_hash = hashlib.sha1(f + str(time.time())).hexdigest()
         k.set_metadata('ETag', etag_hash)
         k.set_contents_from_filename(f)
