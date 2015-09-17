@@ -6,7 +6,6 @@ pillow
 Werkzeug==0.9.6
 beautifulsoup4==4.3.2
 boto==2.18.0
-gdata==2.0.18
 itsdangerous==0.24
 requests==2.2.1
 wsgiref==0.1.2

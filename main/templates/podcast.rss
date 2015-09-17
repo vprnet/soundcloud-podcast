@@ -4,6 +4,7 @@
 		<title>{{ meta.title }}</title>
 		<description>{{ meta.description }}</description>
 		<link>{{ meta.link }}</link>
+		<atom:link href="{{ meta.atom_link }}" rel="self" type="application/rss+xml" />
 		<language>en-us</language>
 		<copyright>Copyright 2007</copyright>
 		<lastBuildDate>{{ pub_date }}</lastBuildDate>

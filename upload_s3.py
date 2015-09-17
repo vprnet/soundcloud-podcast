@@ -66,7 +66,7 @@ def set_metadata():
         if not ext:
             ext = '.html'
     	if filename.split('/')[-1]=='index.html':
-    		content_type = 'text/xml'
+    		content_type = 'application/rss+xml'
         else:
         	content_type = mimetypes.types_map[ext]
         web_path = filename.split('build/')[1]

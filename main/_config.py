@@ -15,21 +15,22 @@ SOUNDCLOUD_API = {
 	"client_secret": "",
     "username": "",
 	"password": ""}
-SEARCH_FOR = ''
+SEARCH_FOR = '' #the track title to search for (SC filter by tag does not work wel)
 SOUNDCLOUD_META = {
-	"title" : "",
-	"description" : "",
-	"link" : "",
-	"webmaster" : "podmaster@vpr.net",
+	"title" : "", #the title of this podcast
+	"description" : "", #podcast description
+	"link" : "", #link to website for this resource (i.e. fairbanksmuseum.org/...)
+	"atom_link": "", #the url for this podcast (e.g. http://www.vpr.net/sandbox/this-podcast/)
+	"webmaster" : "podmaster@vpr.net (VPR PodMaster)",
 	"itunes_author" : "Vermont Public Radio",
 	"itunes_subtitle" : "",
 	"itunes_summary" : "",
 	"itunes_owner" : {
 		"name":"Eye On The Sky",
 		"email" : "podmaster@vpr.net"},
-	"itunes_image" : "",
-	"itunes_category_1": "",
-	"itunes_category_2": "",
+	"itunes_image" : "", # 1400x1400 image/icon for this podcast - hosted by apps/ or sandbox/dirname/static/images/
+	"itunes_category_1": "", # a valid itunes category
+	"itunes_category_2": "", # a valid itunes subcategory
 	"itunes_keywords": ""}
 
 # Cache Settings (units in seconds)
