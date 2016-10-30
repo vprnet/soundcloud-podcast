@@ -45,6 +45,8 @@ def index():
         order = order,
         limit = limit
     )
+    # for some reason sometimes the SC API returns the tracks that are not mine,
+    # so we're also going to get my info and verify that track.user_id = my id
     me = client.get('/me')
     for track in tracks:
         if track.title.lower() == SEARCH_FOR.lower() and track.downloadable and track.user_id == me.id:
