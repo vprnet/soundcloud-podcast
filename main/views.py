@@ -54,6 +54,7 @@ def index():
                 'title': escape(track.title),
                 'permalink_url': escape(track.permalink_url),
                 'download_url': escape(track.download_url.replace('https','http') + '?client_id=' + SOUNDCLOUD_API['client_id']), #https urls do not validate in feed validators?
+                'enclosure_url' : 'http://feeds.soundcloud.com/stream/' + str(track.id) + '-' + track.permalink + '.mp3',
                 'description': escape(track.description),
                 'original_content_size': track.original_content_size,
                 'created_at': fix_time(track.created_at),

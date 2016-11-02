@@ -31,7 +31,7 @@
                 <link>{{ track.permalink_url }}</link>
                 <guid>{{ track.download_url }}</guid>
                 <description>{{ track.description }}</description>
-                <enclosure url="{{ track.download_url }}" length="{{ track.original_content_size }}" type="audio/mpeg"/>
+                <enclosure url="{{ track.enclosure_url }}" length="{{ track.original_content_size }}" type="audio/mpeg"/>
                 <category>Podcasts</category>
                 <pubDate>{{ track.created_at }}</pubDate>
                 <itunes:author>{{ meta.itunes_author }}</itunes:author>
